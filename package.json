@@ -7,7 +7,7 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "lint:fix": "eslint . --fix",
-    "test": "cross-env NODE_ENV=testing jest --watch --verbose"
+    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "Donald Whitely <dswhitely1@gmail.com>",
