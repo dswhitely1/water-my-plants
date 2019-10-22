@@ -14,9 +14,6 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      },
     },
     migrations: {
       directory: './data/migrations',
@@ -38,9 +35,6 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      },
     },
     migrations: {
       directory: './data/migrations',
@@ -56,9 +50,6 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      },
     },
     useNullAsDefault: true,
     migrations: {
