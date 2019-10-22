@@ -1,6 +1,5 @@
 const request = require('supertest');
 const server = require('../../server');
-const Users = require('../../../data/models/user/user.model');
 
 describe('auth.routes.js', () => {
   describe('Register Route', () => {
