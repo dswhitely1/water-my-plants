@@ -1,3 +1,4 @@
+const generatePassword = require('../../api/utils/generatePassword');
 exports.seed = knex =>
   knex('users')
     .del()
@@ -7,21 +8,21 @@ exports.seed = knex =>
           firstName: 'Plant',
           lastName: 'Lover',
           username: 'ilovetrees',
-          password: 'password',
+          password: generatePassword('password'),
           phoneNumber: '8005551212',
         },
         {
           firstName: 'Plant',
           lastName: 'Waterer',
           username: 'iloveflowers',
-          password: 'password',
+          password: generatePassword('password'),
           phoneNumber: '8005551212',
         },
         {
           firstName: 'Plant',
           lastName: 'Controller',
           username: 'ilovevegetables',
-          password: 'password',
+          password: generatePassword('password'),
           phoneNumber: '8005551212',
         },
       ])

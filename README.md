@@ -7,8 +7,10 @@ Backend Project for Lambda&#39;s Build Week API Repository, deployed Link is htt
 	- [Registers a new user for Water My Plants](#registers-a-new-user-for-water-my-plants)
 	
 - [Plants](#plants)
+	- [Deletes the Plant with the provided id](#deletes-the-plant-with-the-provided-id)
 	- [Get All Plants for Currently Logged In User](#get-all-plants-for-currently-logged-in-user)
 	- [Adds a Plant to the Current Logged In User](#adds-a-plant-to-the-current-logged-in-user)
+	- [Updates the Plant Information with the provided Plant Id](#updates-the-plant-information-with-the-provided-plant-id)
 	
 
 
@@ -102,6 +104,29 @@ Error-Response:
 ```
 # Plants
 
+## Deletes the Plant with the provided id
+
+<p>Deletes the Plant with the provided id</p>
+
+	DELETE /api/plants/:id
+
+
+### Success Response
+
+Success-Response:
+
+```
+1
+```
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "Unauthorized"
+}
+```
 ## Get All Plants for Currently Logged In User
 
 <p>Gets the Plants for the Current User</p>
@@ -145,6 +170,47 @@ Success-Response:
   "type": "Flower",
   "location": "Front Yard",
   "waterSchedule": "Once Daily",
+  "nextWatering": "2019-10-23T00:40:00.056Z",
+  "userId": 4
+}
+```
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "Unauthorized"
+}
+```
+## Updates the Plant Information with the provided Plant Id
+
+<p>Updates the Plant Information with the provided Plant Id</p>
+
+	PUT /api/plants/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| name			| String			|  <p>The Plant's Name</p>							|
+| type			| String			|  <p>The Plant's Type</p>							|
+| location			| String			|  <p>The Plant's Location</p>							|
+| waterSchedule			| String			|  <p>The Plant's Watering Schedule Frequency</p>							|
+| nextWatering			| DateTime			|  <p>Next time the Plant needs to be watered</p>							|
+
+### Success Response
+
+Success-Response:
+
+```
+{
+  "id": 10,
+  "name": "Tulip",
+  "type": "Flower",
+  "location": "Front Yard",
+  "waterSchedule": "Twice Daily",
   "nextWatering": "2019-10-23T00:40:00.056Z",
   "userId": 4
 }
